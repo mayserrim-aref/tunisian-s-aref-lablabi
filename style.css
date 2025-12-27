@@ -1,0 +1,186 @@
+/* =========================
+   Tunisian Aesthetic CSS
+========================= */
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400&display=swap');
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+body {
+  margin: 0;
+  padding: 40px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fdfaf6;
+  color: #000080; /* paragraphs default navy */
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* =========================
+   CHILI PEPPER BACKGROUND
+========================= */
+.chili {
+  position: absolute;
+  width: 15px;
+  height: 35px;
+  background: red;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  transform: rotate(-20deg);
+  animation: float 8s linear infinite;
+  z-index: -1; /* behind content */
+}
+
+.chili::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  background: orange;
+  border-radius: 50%;
+  filter: blur(2px);
+  animation: flicker 0.5s infinite alternate;
+}
+
+/* Floating chili animation */
+@keyframes float {
+  0% { transform: translateY(0) rotate(-20deg); }
+  50% { transform: translateY(-20px) rotate(-25deg); }
+  100% { transform: translateY(0) rotate(-20deg); }
+}
+
+/* Flame flicker animation */
+@keyframes flicker {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1 {
+  color: #0000ff; /* solid blue */
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #c9a24d; /* golden accent */
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+h2 {
+  color: #ff0000; /* red H2 */
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-top: 40px;
+  border-left: 4px solid #c9a24d; /* golden accent line */
+  padding-left: 12px;
+}
+
+/* =========================
+   PARAGRAPHS
+========================= */
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 650px;
+  margin-bottom: 20px;
+  color: #000080; /* navy */
+}
+
+/* =========================
+   SECTIONS
+========================= */
+section {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #ffffffdd; /* slightly transparent */
+  border-radius: 12px;
+  position: relative;
+}
+
+/* =========================
+   TILE ACCENTS
+========================= */
+.tile-accent {
+  width: 20px;
+  height: 20px;
+  background-color: #1c4fa1;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: inline-block;
+  margin: 2px;
+  opacity: 0.2;
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+  color: #1c4fa1;
+  text-decoration: none;
+  border-bottom: 1px dotted #c9a24d;
+}
+
+a:hover {
+  color: #c9a24d;
+  border-bottom: 1px solid #1c4fa1;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+}
+
+.chili emoji{
+  position: absolute;
+  width: 40px;
+  height: 80px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 50"><path d="M10 0 C15 0, 20 10, 10 50 C0 10, 5 0, 10 0 Z" fill="red"/><rect x="9" y="-5" width="2" height="5" fill="green"/></svg>') no-repeat center;
+  background-size: contain;
+  animation: float 6s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+.chili emoji {
+  position: absolute;
+  width: 40px;
+  height: 80px;
+  background: url('chili.png') no-repeat center;
+  background-size: contain;
+  animation: float 6s ease-in-out infinite;
+}
+
